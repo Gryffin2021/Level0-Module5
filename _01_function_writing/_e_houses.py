@@ -2,8 +2,60 @@
 Have the turtle draw a row of houses.
 """
 from tkinter import messagebox, simpledialog, Tk
+import turtle
+import random
 
+def draw_house(height):
+    if height == 'medium':
+        height1 = 120
+    elif height == 'large':
+        height1 = 250
+    else:
+        height1 = 60
+    timmy.left(90)
+    timmy.forward(height1)
+    timmy.right(90)
+    timmy.forward(35)
+    timmy.right(90)
+    timmy.forward(height1)
+    timmy.left(90)
+    timmy.pencolor('LIME')
+    timmy.forward(50)
+    timmy.pencolor('BLACK')
 
+def draw_pointy_roof(height):
+    if height == 'medium':
+        height1 = 120
+    else:
+        height1 = 60
+    timmy.left(90)
+    timmy.forward(height1)
+    timmy.right(45)
+    timmy.forward(17.5)
+    timmy.right(90)
+    timmy.forward(17.5)
+    timmy.right(45)
+    timmy.forward(height1)
+    timmy.left(90)
+    timmy.pencolor('LIME')
+    timmy.forward(50)
+    timmy.pencolor('BLACK')
+
+def draw_flat_roof(height):
+    if height == 'large':
+        height1 = 250
+    else:
+        height1 = 10000
+    timmy.left(90)
+    timmy.forward(height1)
+    timmy.right(90)
+    timmy.forward(35)
+    timmy.right(90)
+    timmy.forward(height1)
+    timmy.left(90)
+    timmy.pencolor('LIME')
+    timmy.forward(50)
+    timmy.pencolor('BLACK')
 if __name__ == '__main__':
     # TODO)
     #   1) Move the turtle to the left side of the window near the bottom.
@@ -25,4 +77,22 @@ if __name__ == '__main__':
     #      (JUST the roof part): draw_pointy_roof, draw_flat_roof
     #   11) By calling the correct "roof" function, make large houses have
     #      flat roofs and all the others have pointy roofs.
+    timmy = turtle.Turtle()
+    timmy.penup()
+    timmy.setx(-400)
+    timmy.sety(-350)
+    timmy.pendown()
+    ran = 0
+    for i in range(9):
+        ran = random.randint(0, 2)
+        if ran == 1:
+            var_type = 'medium'
+        elif ran == 2:
+            var_type = 'large'
+        else:
+            var_type = 'small'
+        if var_type == 'large':
+            draw_flat_roof(var_type)
+        else:
+            draw_pointy_roof(var_type)
     pass
