@@ -18,4 +18,16 @@ if __name__ == '__main__':
     #     prints it. The for loop should repeat 10 times.
     #  4. Now try to figure out how to change the variables before the for
     #     loop repeats so the sequence of numbers is correct.
+    number1 = 0
+    number2 = 1
+    sum = number1 + number2
+    print(number1)
+    print(number2)
+    for i in range(10):
+        sum = number1 + number2
+        print(sum)
+        if i % 2 == 0:
+            number1 = sum
+        else:
+            number2 = sum
     pass
