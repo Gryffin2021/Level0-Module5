@@ -5,6 +5,9 @@ https://central.jointheleague.org/levels/Level0/Recipes/ForLoopGauntlet.html
 
 
 if __name__ == '__main__':
+
+    #Single For-Loops
+
     #1
     for i in range(101):
         print(i)
@@ -35,4 +38,26 @@ if __name__ == '__main__':
     for i in range(14):
         year = i + 2010
         print("In ", year, ", I was ", i, " years old!")
-    pass
+
+    #Nested For-Loops
+
+    #1
+    for i in range(3):
+        for j in range(3):
+            print(str(i) + str(j))
+    #2
+    for i in range(3):
+        for j in range(3):
+            print(str(3*i+j+1),end='')
+        print()
+    #3
+    for i in range(10):
+        for j in range(10):
+            print(str(10*i+j+1),end='')
+        print()
+    #4
+    for i in range(6):
+        for j in range(i+1):
+            print("* ", end='')
+        print()
+
